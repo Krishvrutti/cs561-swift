@@ -1,0 +1,17 @@
+import Foundation
+import CryptoKit
+
+/// Input: a string.
+/// Output: the string encrypted using the SHA-1 algorithm.
+let inputString = "7"
+let imputData = Data(inputString.utf8)
+
+let output = Insecure.SHA1.hash(data: inputData)
+print(output)
+func encryptUsingSha1(from input: String) -> String {
+    let inputData = Data(input.utf8)
+    let output = Insecure.SHA1.hash(data: inputData)
+    return output.description
+}
+let sha1 = encryptUsingSha1(from: "7")
+print(sha1)
